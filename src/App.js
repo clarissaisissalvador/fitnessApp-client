@@ -1,10 +1,9 @@
-import { Container } from 'react-bootstrap'
 import {BrowserRouter as Router } from 'react-router-dom';
 import {Route, Routes } from 'react-router-dom';
 
 
 import { UserProvider } from './context/UserContext';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 // Components
@@ -16,6 +15,9 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import FAQs from './pages/FAQs'
 import Login from './pages/Login'
+import Logout from './pages/Logout'
+import Register from './pages/Register'
+import Workouts from './pages/Workouts'
 
 function App() {
 
@@ -35,6 +37,9 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/faqs" element={<FAQs />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/logout" element={<Logout />} />
+            <Route path="/workouts" element={<Workouts />} />
+            <Route path="/register" element={<Register />} />
 
           </Routes>
           <Footer />

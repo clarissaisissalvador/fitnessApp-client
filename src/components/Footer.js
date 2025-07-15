@@ -1,8 +1,5 @@
-import { Row, Col, Container, Form, Button} from 'react-bootstrap';
-import { useState, useEffect } from 'react';
+import { Row, Col, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
-import { Notyf } from 'notyf';
 
 export default function Footer(){
 	return(

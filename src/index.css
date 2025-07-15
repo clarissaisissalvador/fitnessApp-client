@@ -221,3 +221,22 @@ p.small a:hover {
 }
 
 /* Login Page */
+
+
+/* Workout Page */
+#workout {
+  background-color: #070e16;
+  min-height: 100vh;
+}
+
+/* Workout Page */
+
+
+
+/* Register Page */
+#register {
+  background-color: #070e16;
+  min-height: 100vh;
+}
+
+/* Register Page */

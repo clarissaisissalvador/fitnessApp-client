@@ -3,7 +3,8 @@
 export default function AboutUs(){
 
 	return(
-		<section className="container py-5" id="about">
+  <div id="about">
+	<section className="container py-5">
   <div className="row g-4 pt-5">
 
     {/* Mission */}
@@ -52,6 +53,7 @@ export default function AboutUs(){
 
   </div>
 </section>
+</div>
 
 		)
 }

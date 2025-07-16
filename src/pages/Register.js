@@ -7,7 +7,7 @@ import { Notyf } from 'notyf';
 import '../index.css'
 
 export default function Register() {
-
+	
 	const notyf = new Notyf();	
 	const navigate = useNavigate()
 	
@@ -39,7 +39,7 @@ export default function Register() {
 
 		e.preventDefault();
 
-		fetch('https://fitnessapp-api-ln8u.onrender.com/users/register',{
+		fetch('https://fitnessapi-salvador-pj5e.onrender.com/users/register',{
 
 		method: 'POST',
 		headers: {
@@ -69,10 +69,6 @@ export default function Register() {
 
                 notyf.error("Email is invalid");
 
-        } else if (data.error === "Mobile number invalid") {
-
-                notyf.error("Mobile number is invalid");
-
         } else if (data.error === "Password must be atleast 8 characters") {
 
                 notyf.error("Password must be at least 8 characters");
@@ -80,14 +76,19 @@ export default function Register() {
         } 
 
 		})
+		.catch(err => {
+    console.error("Fetch error:", err);
+    notyf.error("Server error. Please try again later.");
+  });
+
 	}
 
     return (
     		<div id="register">
     		<section className="d-flex justify-content-center container">
-			  <Col md={6} className="p-4 border bg-white w-100 mx-auto mt-5">
-			    <Form id="form-register" className="px-5 py-1" onSubmit={(e) => registerUser(e)}>
-			    <div className="mt-3 text-center mb-5">
+			  <Col md={6} className="p-4 border form-p w-75">
+			    <Form id="form-register" className="py-4" onSubmit={(e) => registerUser(e)}>
+			    <div className="mt-3 text-center mb-5 text-white">
 			      <h1>Sign Up</h1>
 			      <p>Please fill in your details to create your account</p>
 			     </div>
@@ -143,8 +144,8 @@ export default function Register() {
 			      }
 				</div>	
 
-			      <p className="mt-2 text-center">
-				  Already have an account? <Link to="/login" className="text-decoration-none">Login</Link>
+			      <p className="mt-2 text-center text-white">
+				  Already have an account? <Link to="/login" className="text-decoration-none login-link">Login</Link>
 				</p>
 			    </Form>
 			  </Col>

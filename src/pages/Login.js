@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 
-import {Navigate, useNavigate, Link} from 'react-router-dom';
+import {useNavigate, Link} from 'react-router-dom';
 import '../index.css'
 
 import { Notyf } from 'notyf';
@@ -21,7 +21,7 @@ export default function Login() {
 
 	function authenticate(e) {
 		e.preventDefault();
-		fetch('https://fitnessapp-api-ln8u.onrender.com/users/login', {
+		fetch('https://fitnessapi-salvador-pj5e.onrender.com/users/login', {
 			method: 'POST',
 			headers: {
 				"Content-Type": "application/json"
@@ -59,7 +59,7 @@ export default function Login() {
 	}
 
 	function retrieveUserDetails(token){
-		fetch('https://zr3adei7p5.execute-api.us-west-2.amazonaws.com/Production/users/details', {
+		fetch('https://fitnessapi-salvador-pj5e.onrender.com/users/details', {
 			headers : {
 				Authorization : `Bearer ${token}`
 			}
@@ -110,7 +110,7 @@ export default function Login() {
 		/>
 		</Form.Group>
 
-		<p className="text-center small">Don't have an Account? <Link to="/register" className="text-decoration-none">Sign Up</Link></p>
+		<p className="text-center small">Don't have an Account? <Link to="/register" className="text-decoration-none signup">Sign Up</Link></p>
 
 		<div className="d-flex justify-content-center pt-3">
 		{ isActive ? 

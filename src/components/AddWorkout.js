@@ -11,7 +11,7 @@ const AddWorkoutModal = ({ show, handleClose, onWorkoutAdded }) => {
   const addWorkout = (e) => {
     e.preventDefault();
 
-    fetch('https://fitnessapp-api-ln8u.onrender.com/workouts/addWorkout', {
+    fetch('https://fitnessapi-salvador-pj5e.onrender.com/workouts/addWorkout', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -19,18 +19,21 @@ const AddWorkoutModal = ({ show, handleClose, onWorkoutAdded }) => {
       },
       body: JSON.stringify(form)
     })
-      .then(res => res.json())
-      .then(data => {
-        if (data._id) {
-          notyf.success('Workout added!');
-          onWorkoutAdded(); 
-          handleClose();
-          setForm({ name: '', duration: '' });
-        } else {
-          notyf.error('Failed to add workout.');
-        }
-      })
-      .catch(() => notyf.error('Add workout request failed.'));
+    .then(res => res.json())
+    .then(data => {
+      console.log("Add workout response:", data);
+      if (data.workout && data.workout._id) {
+        notyf.success('Workout added!');
+        onWorkoutAdded(); 
+        handleClose();
+        setForm({ name: '', duration: '' });
+      } else {
+        notyf.error('Failed to add workout.');
+      }
+    })
+
+
+    .catch(() => notyf.error('Add workout request failed.'));
   };
 
   return (

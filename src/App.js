@@ -3,7 +3,7 @@ import {Route, Routes } from 'react-router-dom';
 
 
 import { UserProvider } from './context/UserContext';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 
 // Components
@@ -26,10 +26,42 @@ function App() {
     isAdmin: null
   });
 
+function unsetUser(){
+    localStorage.clear();
+  };
+  useEffect(()=> {
+      fetch('https://fitnessapi-salvador-pj5e.onrender.com/users/details', {
+        headers : {
+          Authorization: `Bearer ${localStorage.getItem("token")}`
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        // console.log("This is data:")
+        // console.log(data);
 
+        if(data.auth === "Failed"){
+          setUser({
+            id : null,
+            isAdmin: null
+          })
+        } else{
+          setUser({
+            id: data.user._id,
+            isAdmin: data.user.isAdmin
+          })
+        }
+      });
+
+  }, [])
+
+  useEffect(() => {
+    console.log(user);
+    console.log(localStorage);
+  }, [user])
   return (
     <>
-    <UserProvider value={{ user, setUser }}>
+    <UserProvider value={{ user, setUser, unsetUser }}>
       <Router>
         <Navbar />
 

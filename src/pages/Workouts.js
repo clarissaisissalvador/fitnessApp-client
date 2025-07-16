@@ -13,7 +13,7 @@ const WorkoutManager = () => {
   const token = localStorage.getItem('token');
 
   const getWorkouts = () => {
-    fetch('https://fitnessapp-api-ln8u.onrender.com/workouts/getMyWorkouts', {
+    fetch('https://fitnessapi-salvador-pj5e.onrender.com/workouts/getMyWorkouts', {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(res => res.json())
@@ -29,7 +29,7 @@ const WorkoutManager = () => {
   };
 
   const deleteWorkout = (id) => {
-    fetch(`https://fitnessapp-api-ln8u.onrender.com/workouts/deleteWorkout/${id}`, {
+    fetch(`http://localhost:4000/workouts/deleteWorkout/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -46,7 +46,7 @@ const WorkoutManager = () => {
   };
 
   const completeWorkout = (id) => {
-    fetch(`https://fitnessapp-api-ln8u.onrender.com/workouts/completeWorkoutStatus/${id}`, {
+    fetch(`https://fitnessapi-salvador-pj5e.onrender.com/workouts/completeWorkoutStatus/${id}`, {
       method: 'PATCH',
       headers: { Authorization: `Bearer ${token}` }
     })
@@ -63,7 +63,7 @@ const WorkoutManager = () => {
   };
 
   const saveUpdatedWorkout = () => {
-    fetch(`https://fitnessapp-api-ln8u.onrender.com/workouts/updateWorkout/${editWorkout._id}`, {
+    fetch(`https://fitnessapi-salvador-pj5e.onrender.com/workouts/updateWorkout/${editWorkout._id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -89,8 +89,8 @@ const WorkoutManager = () => {
   };
 
   useEffect(() => {
-    getWorkouts();
-  }, []);
+  getWorkouts();
+}, []);
 
   return (
   <div id="workout">

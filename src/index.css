@@ -12,6 +12,16 @@ code {
     monospace;
 }
 
+/* CSS Rule */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
 
 /* Landing Page */
 .custom-navbar {
@@ -141,7 +151,7 @@ code {
 }
 
 .faq-accordion .accordion-body {
-  background-color: #111;
+  background-color: #13171f;
   color: #ccc;
   font-size: 0.95rem;
 }
@@ -151,10 +161,11 @@ code {
 
 /* Login Page */
 #login {
-  background: url('images/login.png') no-repeat center center;
+  background-image: url(./images/login.png);
   background-size: cover;
-  height: 100vh;
-
+  background-position: center;
+  background-attachment: fixed; 
+  padding-bottom: 100px;
 }
 
 /* Form container */
@@ -192,11 +203,11 @@ p.small {
   color: #ccc;
 }
 
-p.small a {
+.signup {
   color: #00da02;
 }
 
-p.small a:hover {
+.signup:hover {
   color: #00b43b;
 }
 
@@ -235,8 +246,48 @@ p.small a:hover {
 
 /* Register Page */
 #register {
-  background-color: #070e16;
-  min-height: 100vh;
+  background-image: url(./images/register.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  padding-bottom: 100px;
+}
+
+.form-p{
+  margin-top: 90px;
+}
+
+/* Register buttons */
+#submitBtn, #submitBtn2 {
+  background-color: #00da02;
+  border: none;
+  color: #070e16;
+  font-weight: 600;
+  border-radius: 0 !important;
+  transition: background-color 0.3s ease;
+}
+
+#submitBtn:hover {
+  background-color: #00b43b;
+  color: #ffffff;
+}
+
+#submitBtn2:disabled {
+  background-color: #444;
+  color: #aaa;
+}
+
+/* Login link */
+.login-link {
+  color: #ccc;
+}
+
+.login-link{
+  color: #00da02;
+}
+
+.login-link:hover {
+  color: #00b43b;
 }
 
 /* Register Page */

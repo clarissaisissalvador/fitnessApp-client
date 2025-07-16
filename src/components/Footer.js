@@ -10,7 +10,7 @@ export default function Footer(){
      			 	
      			 	{/* Brand Summary */}
 					<Col md={6} lg={5} className="mb-4">
-					<h4 className="fw-bold text-white">StayFit</h4>
+					<h4 className="fw-bold text-muted">StayFit</h4>
 					<p className="text-muted">
 						Your personal fitness companion — track your progress, set your goals, and build better habits. 
 					</p>
@@ -23,7 +23,7 @@ export default function Footer(){
 				<Col md={5} lg={4}>
 				<Row>
 					<Col xs={6}>
-					<h6 className="text-light">Navigation</h6>
+					<h6 className="text-muted">Navigation</h6>
 					<ul className="list-unstyled d-flex flex-column gap-2">
 						<li><Link to="/" className="text-decoration-none text-muted">Home</Link></li>
 						<li><Link to="/workouts" className="text-decoration-none text-muted">Workouts</Link></li>
@@ -31,7 +31,7 @@ export default function Footer(){
 					</ul>
 				</Col>
 				<Col xs={6}>
-				<h6 className="text-light">Support</h6>
+				<h6 className="text-muted">Support</h6>
 				<ul className="list-unstyled d-flex flex-column gap-2">
 					<li><Link to="/contact" className="text-decoration-none text-muted">Contact Us</Link></li>
 					<li><Link to="/terms" className="text-decoration-none text-muted">Terms & Conditions</Link></li>

@@ -134,7 +134,7 @@ export default function Register() {
 
 				<div className="d-flex justify-content-center pt-3">
 			      {isActive ? 
-			        <Button type="submit" id="submitBtn2" className="w-100">
+			        <Button type="submit" id="submitBtn2" className="w-50">
 			          Sign Up
 			        </Button>
 			       : 

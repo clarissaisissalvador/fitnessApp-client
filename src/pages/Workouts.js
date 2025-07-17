@@ -29,7 +29,7 @@ const WorkoutManager = () => {
   };
 
   const deleteWorkout = (id) => {
-    fetch(`http://localhost:4000/workouts/deleteWorkout/${id}`, {
+    fetch(`https://fitnessapi-salvador-pj5e.onrender.com/workouts/deleteWorkout/${id}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` }
     })
